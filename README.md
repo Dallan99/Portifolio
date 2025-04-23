@@ -10,8 +10,9 @@
 - Compartilhar conhecimento e crescer junto com a comunidade tech
 
 ## 🌱 Atualmente estou aprendendo:
-- Técnicas avançadas de QA: **BDD, testes de API, testes exploratórios**
+- **Cursando Sistemas da Informação** (Faculdade Impacta)
 - **Desenvolvimento Full Stack com Python** (Faculdade Impacta)
+- Técnicas avançadas de QA: **BDD, testes de API, testes exploratórios**
 - Aplicações de **IA e Machine Learning** em testes e automações
 - Conceitos de **DevOps** e **Integração Contínua/Entrega Contínua (CI/CD)**
 
