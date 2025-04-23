@@ -4,8 +4,8 @@
 
 ## 👀 Tenho interesse em:
 - Automatizar testes com **Selenium, Behave, Cypress** e outras ferramentas
-- Explorar o poder da **IA na automação de testes**
-- Desenvolver soluções com **Python e JavaScript**
+- Explorar o poder da **IA na automação**
+- Desenvolver soluções com **Python, Html, CSS e JavaScript**
 - Criar projetos com **GitHub, Git e metodologias ágeis (Scrum e Kanban)**
 - Compartilhar conhecimento e crescer junto com a comunidade tech
 
@@ -22,7 +22,7 @@
 - Projetos com **Python, Testes ou IA Generativa**
 
 ## 📫 Você pode falar comigo por:
-- Email: dallan.zanini@gmail.com  
+- Email: dallanr@gmail.com  
 - LinkedIn: [linkedin.com/in/dallanborgheresi](https://www.linkedin.com/in/dallanborgheresi)  
 - GitHub: [@Dallan99](https://github.com/Dallan99)
 
