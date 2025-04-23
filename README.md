@@ -10,7 +10,7 @@
 - Compartilhar conhecimento e crescer junto com a comunidade tech
 
 ## 🌱 Atualmente estou aprendendo:
-- **Cursando Sistemas da Informação** (Faculdade Impacta)
+- **Sistemas da Informação** (Faculdade Impacta)
 - **Desenvolvimento Full Stack com Python** (Faculdade Impacta)
 - Técnicas avançadas de QA: **BDD, testes de API, testes exploratórios**
 - Aplicações de **IA e Machine Learning** em testes e automações
