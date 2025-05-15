@@ -1,4 +1,4 @@
-# 👋 Olá, eu sou o Dallan Borgheresi (@Dallan99)
+# 👋 Olá, eu sou o Dallan Borgheresi (@dallanbg)
 
 🎯 Sou um profissional em transição de carreira para a área de **Tecnologia**, com foco em **Qualidade de Software (QA)**, **Desenvolvimento Python** e **Inteligência Artificial Generativa**.
 
