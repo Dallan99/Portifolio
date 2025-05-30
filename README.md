@@ -1,6 +1,6 @@
 # 👋 Olá, eu sou o Dallan Borgheresi (@dallanbg)
 
-🎯 Sou um profissional em transição de carreira para a área de **Tecnologia**, com foco em **Qualidade de Software (QA)**, **Desenvolvimento Front End** **Python** e **Inteligência Artificial Generativa**.
+🎯 Sou um profissional em transição de carreira para a área de **Tecnologia**, com foco em **Qualidade de Software (QA)**, **Desenvolvimento Front End (Html, CSS e JS)**, **Python** e **Inteligência Artificial Generativa**.
 
 ## 👀 Tenho interesse em:
 - Automatizar testes com **Selenium, Behave, Cypress** e outras ferramentas
