@@ -82,12 +82,33 @@ Atualmente na **Decode System**, lidero projetos de transformação de aplicaç�
 
 ---
 
-## 📊 Estatísticas GitHub
+## 📊 Atividade GitHub
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=Dallan99&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dallan99&layout=compact&langs_count=7&theme=tokyonight"/>
+<picture>
+  <source
+    srcset="https://github-readme-stats.vercel.app/api?username=Dallan99&show_icons=true&theme=dark"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="https://github-readme-stats.vercel.app/api?username=Dallan99&show_icons=true"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="https://github-readme-stats.vercel.app/api?username=Dallan99&show_icons=true" />
+</picture>
+
+<picture>
+  <source
+    srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Dallan99&layout=compact&theme=dark"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Dallan99&layout=compact"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dallan99&layout=compact" />
+</picture>
 
 </div>
 
@@ -189,7 +210,10 @@ Atualmente na **Decode System**, lidero projetos de transformação de aplicaç�
 
 ### 🎯 *"Transformando o futuro do desenvolvimento através da convergência entre IA e código"*
 
-![Profile Views](https://komarev.com/ghpvc/?username=Dallan99&color=2c5aa0)
+![Profile Views](https://komarev.com/ghpvc/?username=Dallan99&color=2c5aa0&style=flat-square)
+
+[![GitHub followers](https://img.shields.io/github/followers/Dallan99?label=Seguidores&style=social)](https://github.com/Dallan99)
+[![GitHub User's stars](https://img.shields.io/github/stars/Dallan99?label=Stars%20Totais&style=social)](https://github.com/Dallan99)
 
 </div>
 
