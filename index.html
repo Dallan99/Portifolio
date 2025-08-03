@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Dallan Borgheresi - Projetos</title>
+    <style>
+        /* ===================================
+           PORTFÓLIO DALLAN - TEMA ESCURO MODERNO
+           =================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Fundos Escuros e Neutros */
+            --bg-primary: #0f0f23;
+            --bg-secondary: #1a1a2e;
+            --bg-tertiary: #16213e;
+            --bg-overlay: rgba(0, 0, 0, 0.95);
+            
+            /* Cores Neutras e Textos */
+            --text-primary: #333;
+            --text-secondary: #666;
+            --text-tertiary: #555;
+            --text-light: #a0a0a0;
+            --text-lighter: #d0d0d0;
+            --text-white: white;
+            
+            /* Transparências */
+            --white-10: rgba(255, 255, 255, 0.1);
+            --white-20: rgba(255, 255, 255, 0.2);
+            --white-30: rgba(255, 255, 255, 0.3);
+            --white-90: rgba(255, 255, 255, 0.9);
+            
+            /* Cores de Suporte e Destaque */
+            --success-primary: #10b981;
+            --success-secondary: #059669;
+            --error-primary: #ef4444;
+            --error-secondary: #dc2626;
+            --accent-blue: #0066cc;
+            
+            /* Sombras e Efeitos */
+            --shadow-primary: rgba(102, 126, 234, 0.1);
+            --shadow-secondary: rgba(102, 126, 234, 0.2);
+            --shadow-tertiary: rgba(102, 126, 234, 0.3);
+            --shadow-strong: rgba(102, 126, 234, 0.6);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-tertiary) 100%);
+            --gradient-card: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-lighter);
+            background: var(--gradient-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 0.8s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .container {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--white-10);
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--white-10);
+        }
+
+        .header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--white-10);
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--accent-blue);
+            border-radius: 1px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: var(--text-white);
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            animation: titleSlide 1.2s ease-out 0.3s both;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes titleSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header .emoji {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+            animation: profileFloat 4s ease-in-out infinite;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        @keyframes profileFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-12px) rotate(2deg);
+            }
+        }
+
+        .subtitle {
+            color: var(--text-lighter);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            animation: subtitleSlide 1.2s ease-out 0.6s both;
+        }
+
+        @keyframes subtitleSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .project-category {
+            color: var(--text-white);
+            padding: 35px 30px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--white-10);
+            backdrop-filter: blur(10px);
+        }
+
+        .project-category:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--white-20);
+        }
+
+        /* Cores específicas para cada categoria */
+        .project-category.frontend-category {
+            background: linear-gradient(135deg, var(--accent-blue), #0052a3);
+        }
+
+        .project-category.qa-category {
+            background: linear-gradient(135deg, var(--error-primary), var(--error-secondary));
+        }
+
+        .project-category.fullstack-category {
+            background: linear-gradient(135deg, var(--success-primary), var(--success-secondary));
+        }
+
+        .project-category.ai-category {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .project-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--white-20), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .project-category:hover::before {
+            left: 100%;
+        }
+
+        .project-category .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .project-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-category p {
+            font-size: 1rem;
+            opacity: 0.95;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .project-category .tech-stack {
+            font-size: 0.85rem;
+            margin-top: 12px;
+            opacity: 0.8;
+            font-style: italic;
+            color: var(--white-90);
+        }
+
+        .back-button {
+            background: var(--bg-tertiary);
+            color: var(--text-white);
+            padding: 16px 32px;
+            border: 1px solid var(--white-10);
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-button:hover {
+            background: var(--white-10);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--white-20);
+        }
+
+        /* Páginas específicas */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .project-list {
+            display: grid;
+            gap: 25px;
+            text-align: left;
+        }
+
+        .project-item {
+            background: var(--gradient-card);
+            padding: 30px;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--white-10);
+            backdrop-filter: blur(10px);
+        }
+
+        .project-item:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            border-color: var(--white-20);
+        }
+
+        .project-item.frontend-item {
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .project-item.qa-item {
+            border-left: 4px solid var(--error-primary);
+        }
+
+        .project-item.fullstack-item {
+            border-left: 4px solid var(--success-primary);
+        }
+
+        .project-item.ai-item {
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .project-item h4 {
+            color: var(--text-white);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-item p {
+            color: var(--text-lighter);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: var(--white-10);
+            color: var(--text-white);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--white-20);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: var(--white-20);
+            transform: translateY(-1px);
+        }
+
+        /* Project Links */
+        .project-links {
+            margin-top: 25px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .project-links a,
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-blue);
+            color: var(--text-white);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+            min-width: 130px;
+            text-align: center;
+            border: 1px solid transparent;
+        }
+
+        .project-links a:hover,
+        .project-link:hover {
+            background: #0052a3;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.4);
+        }
+
+        .project-link.live {
+            background: var(--success-primary);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .project-link.live:hover {
+            background: var(--success-secondary);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--white-10);
+            position: relative;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--accent-blue);
+            border-radius: 1px;
+        }
+
+        .page-header h1 {
+            color: var(--text-white);
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-header .description {
+            color: var(--text-lighter);
+            font-size: 1.1rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scrollbar customizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--white-20);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--white-30);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 25px;
+                border-radius: 16px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .project-category {
+                padding: 25px 20px;
+            }
+
+            .project-category h3 {
+                font-size: 1.3rem;
+            }
+
+            .project-item {
+                padding: 25px;
+            }
+
+            .project-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-link {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        /* Efeitos de focus para acessibilidade */
+        a:focus, button:focus {
+            outline: 2px solid var(--accent-blue);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .page-loaded {
+            opacity: 1;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        /* Glowing effects */
+        .project-category:hover .icon {
+            text-shadow: 0 0 20px currentColor;
+        }
+
+        /* Backdrop blur support */
+        @supports (backdrop-filter: blur(20px)) {
+            .container {
+                background: rgba(26, 26, 46, 0.85);
+            }
+            
+            .project-item {
+                background: rgba(22, 33, 62, 0.7);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Página Principal -->
+    <div class="container">
+        <div id="home" class="page active">
+            <div class="header">
+                <span class="emoji">💻</span>
+                <h1>Escolha seu projeto</h1>
+                <p class="subtitle">Dallan Borgheresi - Vibe Coding Specialist & AI Developer</p>
+                <span class="emoji">👇</span>
+            </div>
+
+            <div class="projects-grid">
+                <a href="#" class="project-category frontend-category fade-in" onclick="showPage('frontend')">
+                    <span class="icon">🌐</span>
+                    <h3>Projetos Frontend</h3>
+                    <p>Landing pages e sites responsivos profissionais</p>
+                    <div class="tech-stack">HTML5 • CSS3 • JavaScript • Responsive Design</div>
+                </a>
+
+                <a href="#" class="project-category qa-category fade-in" onclick="showPage('qa')">
+                    <span class="icon">🔧</span>
+                    <h3>Projetos QA</h3>
+                    <p>Automação de testes e qualidade de software</p>
+                    <div class="tech-stack">Selenium • Playwright • Pytest • PyAutoGUI</div>
+                </a>
+
+                <a href="#" class="project-category fullstack-category fade-in" onclick="showPage('fullstack')">
+                    <span class="icon">🐍</span>
+                    <h3>Projetos Full Stack</h3>
+                    <p>Desenvolvimento web e migração de sistemas</p>
+                    <div class="tech-stack">Python • Flask • React • APIs</div>
+                </a>
+
+                <a href="#" class="project-category ai-category fade-in" onclick="showPage('ai')">
+                    <span class="icon">🤖</span>
+                    <h3>Projetos IA</h3>
+                    <p>Inteligência artificial e automação inteligente</p>
+                    <div class="tech-stack">OpenAI • LangChain • Streamlit • DALL-E</div>
+                </a>
+            </div>
+
+            <a href="https://dallan99.github.io/cv-dallan/" class="back-button" target="_blank">
+                ← VOLTAR PARA O CURRÍCULO
+            </a>
+        </div>
+
+        <!-- Página Projetos Frontend -->
+        <div id="frontend" class="page">
+            <div class="page-header">
+                <span class="emoji">🌐</span>
+                <h1>Projetos Frontend</h1>
+                <p class="description">Landing pages e sites responsivos profissionais</p>
+            </div>
+
+            <div class="project-list">
+                <div class="project-item frontend-item fade-in">
+                    <h4>🏢 Ilha Norte Express</h4>
+                    <p>Landing page profissional para empresa de entregas especializadas no norte da ilha de Santa Catarina. Site responsivo com design moderno, integração WhatsApp Business e foco na experiência do usuário.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Responsive Design</span>
+                        <span class="tech-tag">WhatsApp Integration</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://dallan99.github.io/Ilha-Norte-Express" target="_blank" class="project-link live">🌐 Ver Site</a>
+                        <a href="https://github.com/Dallan99/Ilha-Norte-Express" target="_blank" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-item frontend-item fade-in">
+                    <h4>🔄 WebFlow Solutions</h4>
+                    <p>Site institucional para empresa de transformação digital especializada em modernização de sistemas legados. Plataforma corporativa com arquitetura moderna e design profissional.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Corporate Website</span>
+                        <span class="tech-tag">SEO Optimized</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.webflow.dev.br" target="_blank" class="project-link live">🌐 Ver Site</a>
+                        <a href="https://github.com/Dallan99/Web_Flow_Solutions" target="_blank" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-item frontend-item fade-in">
+                    <h4>📄 Currículo Online Responsivo</h4>
+                    <p>CV interativo criado com HTML5, CSS3 e JavaScript, hospedado no GitHub Pages. Design responsivo com animações suaves e otimização para SEO.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">GitHub Pages</span>
+                        <span class="tech-tag">Responsive Design</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://dallan99.github.io/cv-dallan/" target="_blank" class="project-link live">🌐 Ver Site</a>
+                        <a href="https://github.com/Dallan99/cv-dallan" target="_blank" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <a href="#" class="back-button" onclick="showPage('home')">← Voltar</a>
+        </div>
+
+        <!-- Página Projetos QA -->
+        <div id="qa" class="page">
+            <div class="page-header">
+                <span class="emoji">🔧</span>
+                <h1>Projetos QA</h1>
+                <p class="description">Automação de testes e qualidade de software</p>
+            </div>
+
+            <div class="project-list">
+                <div class="project-item qa-item fade-in">
+                    <h4>🎭 Automação Playwright JS</h4>
+                    <p>Suite de testes em JavaScript usando Playwright para fluxo completo de e-commerce. Automatiza todo o processo de compra no SauceDemo.com: login, seleção de produtos, checkout e validação de sucesso.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Playwright</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">E2E Testing</span>
+                        <span class="tech-tag">Test Automation</span>
+                        <span class="tech-tag">CI/CD</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Dallan99/Automacao-Playwright-JS" target="_blank" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-item qa-item fade-in">
+                    <h4>🐍 Automação Selenium + Pytest</h4>
+                    <p>Suite de testes BDD em Python usando Selenium WebDriver e Behave. Automatiza cenários de login (válido, inválido, campos vazios) no SauceDemo.com com relatórios detalhados.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Selenium</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Behave</span>
+                        <span class="tech-tag">BDD</span>
+                        <span class="tech-tag">Pytest</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Dallan99/automacao-teste-Selenium-Pytest-SauceDemo140" target="_blank" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-item qa-item fade-in">
+                    <h4>🤖 Automação Python + PyAutoGUI</h4>
+                    <p>Scripts de automação e IA para cadastro automatizado e integração com Hugging Face. Bot de cadastro com PyAutoGUI, integração com IA e exercícios de programação orientada a objetos.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyAutoGUI</span>
+                        <span class="tech-tag">Hugging Face</span>
+                        <span class="tech-tag">Automation</span>
+                        <span class="tech-tag">OOP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Dallan99/Automacao-com-Python-e-PyAutogui" target="_blank" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <a href="#" class="back-button" onclick="showPage('home')">← Voltar</a>
+        </div>
+
+        <!-- Página Projetos Full Stack -->
+        <div id="fullstack" class="page">
+            <div class="page-header">
+                <span class="emoji">🐍</span>
+                <h1>Projetos Full Stack</h1>
+                <p class="description">Desenvolvimento web e migração de sistemas</p>
+            </div>
+
+            <div class="project-list">
+                <div class="project-item fullstack-item fade-in">
+                    <h4>🔄 Migração de ERP Legado</h4>
+                    <p>Transformação completa de sistema empresarial Delphi para React usando Vibe Coding e IA generativa. Resultados: 85% redução no tempo de desenvolvimento, interface moderna preservando funcionalidades.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Vibe Coding</span>
+                        <span class="tech-tag">IA Generativa</span>
+                        <span class="tech-tag">Delphi Migration</span>
+                        <span class="tech-tag">API REST</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://decodesystem.com.br" target="_blank" class="project-link live">🏢 Decode System</a>
+                        <a href="https://github.com/Dallan99/DECODE_SYSTEM" target="_blank" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-item fullstack-item fade-in">
+                    <h4>🏪 Gerenciador de Estoque Flask</h4>
+                    <p>Aplicação web em Flask para gerenciamento de estoque de motocicletas. Sistema completo com formulários para adicionar e listar itens, usando HTML/CSS responsivo e Jinja2 para templates dinâmicos.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Jinja2</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">Web Development</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Dallan99/gerenciador-de-estoque" target="_blank" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <a href="#" class="back-button" onclick="showPage('home')">← Voltar</a>
+        </div>
+
+        <!-- Página Projetos IA -->
+        <div id="ai" class="page">
+            <div class="page-header">
+                <span class="emoji">🤖</span>
+                <h1>Projetos IA</h1>
+                <p class="description">Inteligência artificial e automação inteligente</p>
+            </div>
+
+            <div class="project-list">
+                <div class="project-item ai-item fade-in">
+                    <h4>🧠 BrainAI - Agente Inteligente</h4>
+                    <p>Agente inteligente em Streamlit para consultas em linguagem natural sobre notas fiscais. Sistema que permite consultas usando Pandas para XLS/CSV e LangChain + OpenAI para gerar e executar snippets Python automaticamente.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">OpenAI</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NLP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Dallan99/I2A2---Tarefa2---NF" target="_blank" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-item ai-item fade-in">
+                    <h4>📊 Dashboard Interativo Excel</h4>
+                    <p>Dashboard financeiro interativo com Tabelas Dinâmicas e gráficos. Projeto demonstrando segmentações e exploração dinâmica de dados empresariais com análise avançada.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Excel</span>
+                        <span class="tech-tag">Dashboard</span>
+                        <span class="tech-tag">Data Analysis</span>
+                        <span class="tech-tag">Business Intelligence</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Dallan99/Dashboard-Interativo-Excel" target="_blank" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-item ai-item fade-in">
+                    <h4>📖 E-book "Dominando CSS" com IA</h4>
+                    <p>E-book sobre seletores CSS criado com workflows de IA. Combinando PowerPoint, Canva e ChatGPT para produção de conteúdo técnico de alta qualidade.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ChatGPT</span>
+                        <span class="tech-tag">Content Creation</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">AI Workflows</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Dallan99/E-book-com-auxilio-de-IA" target="_blank" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-item ai-item fade-in">
+                    <h4>🎙️ Prompts para Podcast com IA</h4>
+                    <p>Workflows completos para criação de podcast usando múltiplas ferramentas de IA. ChatGPT para roteiro, ElevenLabs para áudio, Midjourney para capa e Capcut para edição.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ChatGPT</span>
+                        <span class="tech-tag">ElevenLabs</span>
+                        <span class="tech-tag">Midjourney</span>
+                        <span class="tech-tag">Content Creation</span>
+                        <span class="tech-tag">AI Workflows</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Dallan99/prompts-for-podcast-generate-by-ia" target="_blank" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-item ai-item fade-in">
+                    <h4>🍰 Delícias de Mãe - Branding IA</h4>
+                    <p>Site estático com storytelling e identidade visual criados por IA. Projeto celebrando receitas artesanais com prompt engineering e imagens geradas por DALL-E.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">DALL-E</span>
+                        <span class="tech-tag">Prompt Engineering</span>
+                        <span class="tech-tag">Branding</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Dallan99/deliciasdemae" target="_blank" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <a href="#" class="back-button" onclick="showPage('home')">← Voltar</a>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Esconder todas as páginas
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Mostrar a página selecionada
+            document.getElementById(pageId).classList.add('active');
+            
+            // Reinicializar animações da nova página
+            setTimeout(() => {
+                initScrollAnimations();
+            }, 100);
+        }
+
+        // Animações de entrada
+        function initScrollAnimations() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    element.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        }
+
+        // Inicializar quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            // Marcar como carregada
+            document.body.classList.add('page-loaded');
+            
+            // Inicializar animações
+            initScrollAnimations();
+            
+            // Adicionar efeitos de hover avançados
+            const projectItems = document.querySelectorAll('.project-item');
+            projectItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                    this.style.boxShadow = '0 25px 70px rgba(0,0,0,0.5)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                    this.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+                });
+            });
+
+            // Efeitos nos botões de categoria
+            const categoryButtons = document.querySelectorAll('.project-category');
+            categoryButtons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.querySelector('.icon').style.transform = 'scale(1.1) rotate(5deg)';
+                    this.querySelector('.icon').style.textShadow = '0 0 20px currentColor';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.querySelector('.icon').style.transform = 'scale(1) rotate(0deg)';
+                    this.querySelector('.icon').style.textShadow = '0 2px 4px rgba(0, 0, 0, 0.3)';
+                });
+            });
+
+            // Efeitos nos links dos projetos
+            const projectLinks = document.querySelectorAll('.project-link');
+            projectLinks.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px) scale(1.05)';
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+                
+                // Efeito de clique
+                link.addEventListener('click', function() {
+                    this.style.transform = 'translateY(1px) scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-2px) scale(1.05)';
+                    }, 150);
+                });
+            });
+
+            // Console log personalizado com tema escuro
+            console.log(`
+            ╔══════════════════════════════════════╗
+            ║                                      ║
+            ║     🌙 PORTFÓLIO DARK MODE 🌙        ║
+            ║         Dallan Borgheresi            ║
+            ║                                      ║
+            ║   Vibe Coding Specialist & AI Dev    ║
+            ║                                      ║
+            ╚══════════════════════════════════════╝
+            
+            🎨 TEMA ESCURO APLICADO:
+            • Fundos: #0f0f23, #1a1a2e, #16213e
+            • Textos: #d0d0d0, #a0a0a0, white
+            • Acentos: #0066cc, #10b981, #ef4444
+            • Sombras: rgba(102, 126, 234, 0.1-0.6)
+            
+            🚀 Funcionalidades Premium:
+            • ✅ Design dark mode profissional
+            • ✅ Backdrop blur e transparências
+            • ✅ Animações suaves e modernas
+            • ✅ Efeitos glow nos ícones
+            • ✅ Scrollbar personalizada
+            • ✅ Gradients sofisticados
+            
+            📊 Categorias de Projetos:
+            • 🌐 Frontend: 3 projetos (azul #0066cc)
+            • 🔧 QA: 3 projetos (vermelho #ef4444) 
+            • 🐍 Full Stack: 2 projetos (verde #10b981)
+            • 🤖 IA: 5 projetos (roxo #8b5cf6)
+            
+            💡 Especialista em Vibe Coding e IA Generativa
+            🔗 GitHub: https://github.com/Dallan99
+            
+            🎯 Projetos em destaque:
+            • Ilha Norte Express: Landing page moderna
+            • BrainAI: Agente inteligente com LangChain
+            • Migração ERP: Delphi para React com IA
+            • Automação Playwright: Testes E2E avançados
+            
+            🌟 Portfólio Dark Mode Ativado!
+            `);
+        });
+
+        // Keyboard navigation melhorada
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                showPage('home');
+            }
+            
+            // Navegação com números
+            if (e.key >= '1' && e.key <= '4') {
+                const pages = ['frontend', 'qa', 'fullstack', 'ai'];
+                const pageIndex = parseInt(e.key) - 1;
+                if (pages[pageIndex]) {
+                    showPage(pages[pageIndex]);
+                }
+            }
+            
+            // Navegação com setas
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                const currentPage = document.querySelector('.page.active').id;
+                const pages = ['home', 'frontend', 'qa', 'fullstack', 'ai'];
+                const currentIndex = pages.indexOf(currentPage);
+                
+                if (e.key === 'ArrowRight' && currentIndex < pages.length - 1) {
+                    showPage(pages[currentIndex + 1]);
+                } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                    showPage(pages[currentIndex - 1]);
+                }
+            }
+        });
+
+        // Analytics melhorado
+        function trackProjectView(category, project) {
+            console.log(`📊 [${new Date().toLocaleTimeString()}] Projeto visualizado: ${category} - ${project}`);
+            
+            // Simular envio para analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'project_view', {
+                    'event_category': 'Portfolio',
+                    'event_label': `${category}_${project}`,
+                    'value': 1
+                });
+            }
+        }
+
+        // Interceptar cliques nos links dos projetos
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('project-link')) {
+                const projectName = e.target.closest('.project-item').querySelector('h4').textContent;
+                const category = document.querySelector('.page.active').id;
+                trackProjectView(category, projectName);
+                
+                // Efeito visual de confirmação
+                const originalText = e.target.textContent;
+                e.target.style.background = 'var(--success-primary)';
+                e.target.textContent = '✓ Abrindo...';
+                
+                setTimeout(() => {
+                    e.target.style.background = '';
+                    e.target.textContent = originalText;
+                }, 1500);
+            }
+        });
+
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            const loadTime = performance.now();
+            console.log(`⚡ Portfólio carregado em ${Math.round(loadTime)}ms`);
+            
+            // Lazy load de imagens se houver
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                document.querySelectorAll('img[data-src]').forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+        });
+
+        // Easter egg melhorado - Konami Code
+        let konamiCode = [];
+        const targetCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+        
+        document.addEventListener('keydown', function(e) {
+            konamiCode.push(e.keyCode);
+            if (konamiCode.length > targetCode.length) {
+                konamiCode.shift();
+            }
+            
+            if (JSON.stringify(konamiCode) === JSON.stringify(targetCode)) {
+                console.log('🎮 KONAMI CODE ATIVADO! Modo Matrix Ativado! 🚀');
+                
+                // Efeito Matrix visual
+                document.body.style.transition = 'all 1s ease';
+                document.body.style.filter = 'hue-rotate(120deg) saturate(2) contrast(1.2)';
+                document.body.style.background = 'linear-gradient(135deg, #001100 0%, #003300 50%, #002200 100%)';
+                
+                // Chuva de código Matrix (simplificada)
+                const matrixOverlay = document.createElement('div');
+                matrixOverlay.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                    z-index: 9999;
+                    background: linear-gradient(0deg, transparent 0%, #00ff4150 50%, transparent 100%);
+                    animation: matrixRain 2s linear;
+                `;
+                
+                document.body.appendChild(matrixOverlay);
+                
+                // Mensagem especial
+                const message = document.createElement('div');
+                message.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(0, 255, 65, 0.1);
+                    color: #00ff41;
+                    padding: 30px;
+                    border-radius: 10px;
+                    font-size: 1.5rem;
+                    z-index: 10000;
+                    text-align: center;
+                    border: 2px solid #00ff41;
+                    font-family: 'Courier New', monospace;
+                    text-shadow: 0 0 10px #00ff41;
+                    animation: glitch 0.5s infinite;
+                `;
+                message.innerHTML = `
+                    <div>🎮 MODO MATRIX ATIVADO 🎮</div>
+                    <div style="font-size: 1rem; margin-top: 10px;">
+                        Dallan.exe está no sistema...
+                    </div>
+                `;
+                document.body.appendChild(message);
+                
+                // Adicionar keyframes para animações
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes matrixRain {
+                        0% { transform: translateY(-100%); }
+                        100% { transform: translateY(100vh); }
+                    }
+                    
+                    @keyframes glitch {
+                        0%, 100% { transform: translate(-50%, -50%); }
+                        25% { transform: translate(-49%, -50%); }
+                        50% { transform: translate(-51%, -50%); }
+                        75% { transform: translate(-50%, -49%); }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                setTimeout(() => {
+                    document.body.style.filter = 'none';
+                    document.body.style.background = '';
+                    document.body.removeChild(matrixOverlay);
+                    document.body.removeChild(message);
+                    document.head.removeChild(style);
+                }, 5000);
+            }
+        });
+
+        // Função para adicionar novos projetos (API melhorada)
+        window.addProject = function(category, projectData) {
+            const categoryPage = document.getElementById(category);
+            if (!categoryPage) {
+                console.error(`❌ Categoria '${category}' não encontrada`);
+                return;
+            }
+            
+            const projectList = categoryPage.querySelector('.project-list');
+            const projectItem = document.createElement('div');
+            projectItem.className = `project-item ${category}-item fade-in`;
+            
+            projectItem.innerHTML = `
+                <h4>${projectData.title}</h4>
+                <p>${projectData.description}</p>
+                <div class="project-tech">
+                    ${projectData.technologies.map(tech => 
+                        `<span class="tech-tag">${tech}</span>`
+                    ).join('')}
+                </div>
+                <div class="project-links">
+                    ${projectData.links.map(link => 
+                        `<a href="${link.url}" target="_blank" class="project-link ${link.type || ''}">${link.text}</a>`
+                    ).join('')}
+                </div>
+            `;
+            
+            projectList.appendChild(projectItem);
+            
+            // Animar entrada do novo projeto
+            setTimeout(() => {
+                projectItem.style.opacity = '1';
+                projectItem.style.transform = 'translateY(0)';
+            }, 100);
+            
+            console.log(`✅ Novo projeto adicionado à categoria ${category}: ${projectData.title}`);
+        };
+
+        // Indicar carregamento completo
+        console.log('🌙 Portfólio Dark Mode carregado com sucesso!');
+        console.log('💡 Dicas de navegação:');
+        console.log('   • ESC: Voltar ao início');
+        console.log('   • 1-4: Navegar por categoria');
+        console.log('   • ←→: Navegar sequencialmente');
+        console.log('   • ↑↑↓↓←→←→BA: Easter egg especial');
+    </script>
+</body>
+</html>
